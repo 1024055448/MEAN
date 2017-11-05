@@ -1,0 +1,494 @@
+<!DOCTYPE html><html data-dpr="1" style="font-size: 54px; user-select: none;"><head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>fz-第三个界面 </title>
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes">
+    
+        <script type="text/javascript">
+            !function(){var a="@charset \"utf-8\";html{color:#000;background:#fff;overflow-y:scroll;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}html *{outline:0;-webkit-text-size-adjust:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}html,body{font-family:sans-serif}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0}input,select,textarea{font-size:100%}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}abbr,acronym{border:0;font-variant:normal}del{text-decoration:line-through}address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:500}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500}q:before,q:after{content:''}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}a:hover{text-decoration:underline}ins,a{text-decoration:none}",b=document.createElement("style");if(document.getElementsByTagName("head")[0].appendChild(b),b.styleSheet)b.styleSheet.disabled||(b.styleSheet.cssText=a);else try{b.innerHTML=a}catch(c){b.innerText=a}}();!function(a,b){function c(){var b=f.getBoundingClientRect().width;b/i>540&&(b=540*i);var c=b/10;f.style.fontSize=c+"px",k.rem=a.rem=c}var d,e=a.document,f=e.documentElement,g=e.querySelector('meta[name="viewport"]'),h=e.querySelector('meta[name="flexible"]'),i=0,j=0,k=b.flexible||(b.flexible={});if(g){console.warn("将根据已有的meta标签来设置缩放比例");var l=g.getAttribute("content").match(/initial\-scale=([\d\.]+)/);l&&(j=parseFloat(l[1]),i=parseInt(1/j))}else if(h){var m=h.getAttribute("content");if(m){var n=m.match(/initial\-dpr=([\d\.]+)/),o=m.match(/maximum\-dpr=([\d\.]+)/);n&&(i=parseFloat(n[1]),j=parseFloat((1/i).toFixed(2))),o&&(i=parseFloat(o[1]),j=parseFloat((1/i).toFixed(2)))}}if(!i&&!j){var p=(a.navigator.appVersion.match(/android/gi),a.navigator.appVersion.match(/iphone/gi)),q=a.devicePixelRatio;i=p?q>=3&&(!i||i>=3)?3:q>=2&&(!i||i>=2)?2:1:1,j=1/i}if(f.setAttribute("data-dpr",i),!g)if(g=e.createElement("meta"),g.setAttribute("name","viewport"),g.setAttribute("content","initial-scale="+j+", maximum-scale="+j+", minimum-scale="+j+", user-scalable=no"),f.firstElementChild)f.firstElementChild.appendChild(g);else{var r=e.createElement("div");r.appendChild(g),e.write(r.innerHTML)}a.addEventListener("resize",function(){clearTimeout(d),d=setTimeout(c,300)},!1),a.addEventListener("pageshow",function(a){a.persisted&&(clearTimeout(d),d=setTimeout(c,300))},!1),"complete"===e.readyState?e.body.style.fontSize=12*i+"px":e.addEventListener("DOMContentLoaded",function(){e.body.style.fontSize=12*i+"px"},!1),c(),k.dpr=a.dpr=i,k.refreshRem=c,k.rem2px=function(a){var b=parseFloat(a)*this.rem;return"string"==typeof a&&a.match(/rem$/)&&(b+="px"),b},k.px2rem=function(a){var b=parseFloat(a)/this.rem;return"string"==typeof a&&a.match(/px$/)&&(b+="rem"),b}}(window,window.lib||(window.lib={}));
+        </script><style>@charset "utf-8";html{color:#000;background:#fff;overflow-y:scroll;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}html *{outline:0;-webkit-text-size-adjust:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}html,body{font-family:sans-serif}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0}input,select,textarea{font-size:100%}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}abbr,acronym{border:0;font-variant:normal}del{text-decoration:line-through}address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:500}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500}q:before,q:after{content:''}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}a:hover{text-decoration:underline}ins,a{text-decoration:none}</style><meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    
+
+    
+
+    <meta name="msapplication-tap-highlight" content="no">
+
+    
+
+
+        <script>
+        var APPVersion = 0;
+        ! function(a, b) {
+            function c() {
+                var b = f.getBoundingClientRect().width;
+                if(a.navigator.appVersion.match(/iphone/gi) && b < 500){
+                    b = b * i
+                }
+                b / i > 540 && (b = 540 * i);
+                var c = b / 10;
+                f.style.fontSize = c + "px", k.rem = a.rem = c
+            }
+            var d, e = a.document,
+                f = e.documentElement,
+                g = e.querySelector('meta[name="viewport"]'),
+                h = e.querySelector('meta[name="flexible"]'),
+                i = 0,
+                j = 0,
+                k = b.flexible || (b.flexible = {});
+            if (g) {
+                console.warn("将根据已有的meta标签来设置缩放比例");
+                var l = g.getAttribute("content").match(/initial\-scale=([\d\.]+)/);
+                l && (j = parseFloat(l[1]), i = parseInt(1 / j))
+            } else if (h) {
+                var m = h.getAttribute("content");
+                if (m) {
+                    var n = m.match(/initial\-dpr=([\d\.]+)/),
+                        o = m.match(/maximum\-dpr=([\d\.]+)/);
+                    n && (i = parseFloat(n[1]), j = parseFloat((1 / i).toFixed(2))), o && (i = parseFloat(o[1]), j = parseFloat((1 / i).toFixed(2)))
+                }
+            }
+            if (!i && !j) {
+                var p = (a.navigator.appVersion.match(/android/gi), a.navigator.appVersion.match(/iphone/gi)),
+                    q = a.devicePixelRatio;
+                i = p ? q >= 3 && (!i || i >= 3) ? 3 : q >= 2 && (!i || i >= 2) ? 2 : 1 : 1, j = 1 / i
+            }
+            if (f.setAttribute("data-dpr", i), !g)
+                if (g = e.createElement("meta"), g.setAttribute("name", "viewport"), g.setAttribute("content", "initial-scale=" + j + ", maximum-scale=" + j + ", minimum-scale=" + j + ", user-scalable=no"), f.firstElementChild) f.firstElementChild.appendChild(g);
+                else {
+                    var r = e.createElement("div");
+                    r.appendChild(g), e.write(r.innerHTML)
+                }
+            a.addEventListener("resize", function() {
+                clearTimeout(d), d = setTimeout(c, 300)
+            }, !1), a.addEventListener("pageshow", function(a) {
+                a.persisted && (clearTimeout(d), d = setTimeout(c, 300))
+            }, !1), "complete" === e.readyState ? e.body.style.fontSize = 12 * i + "px" : e.addEventListener("DOMContentLoaded", function() {
+                e.body.style.fontSize = 12 * i + "px"
+            }, !1), c(), k.dpr = a.dpr = i, k.refreshRem = c, k.rem2px = function(a) {
+                var b = parseFloat(a) * this.rem;
+                return "string" == typeof a && a.match(/rem$/) && (b += "px"), b
+            }, k.px2rem = function(a) {
+                var b = parseFloat(a) / this.rem;
+                return "string" == typeof a && a.match(/px$/) && (b += "rem"), b
+            }
+        }(window, window.lib || (window.lib = {}));
+        </script>
+
+        
+        <link href="https://staticcdn.igetget.com/mobile/dedao/dist/css/project/try/article-new.86ff42232a.css" rel="stylesheet"> 
+        
+
+        <!-- 新版本编辑器样式 -->
+        
+        <link href="https://staticcdn.igetget.com/www/editor/dist/preview.afebcce9e08987c5dc15.css" rel="stylesheet">
+        
+
+        <!-- 新版本编辑器字体样式 -->
+        
+        <style>
+        @font-face {
+            font-family: "font-text";
+            src: url(https://fontcdn.igetget.com//font-file/build/3750/c4972a0a1dd33cf876258266ea078194.woff);
+        }
+        .article .article-body p,.article .article-body ul li,.article .article-body ol li,.article .article-body .tips p b {
+            font-family: "font-text";
+        }
+    
+        @font-face {
+            font-family: "font-title";
+            src: url(https://fontcdn.igetget.com//font-file/build/3750/8d5b274331fe4b1bdcdd0660d0f069d9.woff);
+        }
+        .article .title,.article h3.letter-item,.article h4.letter-item,.article .article-body h2.titleCenter {
+            font-family: "font-title";
+        }
+    
+        @font-face {
+            font-family: "font-tip";
+            src: url(https://fontcdn.igetget.com//font-file/build/3750/22e87ca2d645554d3efa5e73a60fed02.woff);
+        }
+        .article .article-body .tag span,.article .article-body figure figcaption,.article .article-body .audio .audio-tips .text,.article .article-body .tips p,.article .article-body .audio .info span,.article .author {
+            font-family: "font-tip";
+        }
+    
+        @font-face {
+            font-family: "font-titleSmall";
+            src: url(https://fontcdn.igetget.com//font-file/build/3750/8f990add7a3eb50776aa04f3d519e87f.woff);
+        }
+        .article .article-body h2 {
+            font-family: "font-titleSmall";
+        }
+    
+        @font-face {
+            font-family: "font-bold";
+            src: url(https://fontcdn.igetget.com//font-file/build/3750/8b4572cd7ccca80284316cdddd1984ff.woff);
+        }
+        .article .article-body p b,.article .article-body b {
+            font-family: "font-bold";
+        }
+    </style>
+        
+    
+
+    <script type="text/javascript">
+        var baseUrl = "https://staticcdn.igetget.com/mobile/dedao/dist/";
+        var user = {};
+    </script>
+
+
+<style type="text/css">
+@-webkit-keyframes mw-kfr-slidedown{0%{opacity:0;-webkit-transform:translateY(-2em)}15%{opacity:1;-webkit-transform:translateY(0)}70%{-webkit-transform:translateY(3em)}85%{opacity:1;-webkit-transform:translateY(4.5em)}to{opacity:1;-webkit-transform:translateY(4.5em)}}
+@-moz-keyframes mw-kfr-slidedown{0%{opacity:0;-webkit-transform:translateY(-2em)}15%{opacity:1;-webkit-transform:translateY(0)}70%{-moz-transform:translateY(3em);transform:translateY(3em)}85%{opacity:1;-moz-transform:translateY(4.5em);transform:translateY(4.5em)}to{opacity:1;-moz-transform:translateY(4.5em);transform:translateY(4.5em)}}
+@keyframes mw-kfr-slidedown{0%{opacity:0;-webkit-transform:translateY(-2em)}15%{opacity:1;-webkit-transform:translateY(0)}70%{-webkit-transform:translateY(3em);-moz-transform:translateY(3em);transform:translateY(3em)}85%{opacity:1;-webkit-transform:translateY(4.5em);-moz-transform:translateY(4.5em);transform:translateY(4.5em)}to{opacity:1;-webkit-transform:translateY(4.5em);-moz-transform:translateY(4.5em);transform:translateY(4.5em)}}
+@-webkit-keyframes mw-kfr-loading{0%{opacity:1;-webkit-transform:translateX(-200px)}to{opacity:0;-webkit-transform:translateX(50em)}}
+@-webkit-keyframes mw-kfr-fadeIn{0%{display:block;opacity:0;-webkit-transform:translateY(6em)}to{display:block;opacity:1;-webkit-transform:translateY(0)}}@-webkit-keyframes mw-kfr-fadeOut{0%{display:block;opacity:1;-webkit-transform:translateY(0)}to{display:none;opacity:0;-webkit-transform:translateY(6em)}}
+@-moz-keyframes mw-kfr-fadeIn{0%{display:block;opacity:0;-moz-transform:translateY(6em)}to{display:block;opacity:1;-moz-transform:translateY(0)}}@-moz-keyframes mw-kfr-fadeOut{0%{display:block;opacity:1;-moz-transform:translateY(0)}to{display:none;opacity:0;-moz-transform:translateY(6em)}}
+@keyframes mw-kfr-fadeIn{0%{display:block;opacity:0;-webkit-transform:translateY(6em);-moz-transform:translateY(6em);transform:translateY(6em)}to{display:block;opacity:1;-webkit-transform:translateY(0);-moz-transform:translateY(0);transform:translateY(0)}}
+@keyframes mw-kfr-fadeOut{0%{display:block;opacity:1;-webkit-transform:translateY(0);-moz-transform:translateY(0);transform:translateY(0)}to{display:none;opacity:0;-webkit-transform:translateY(6em);-moz-transform:translateY(6em);transform:translateY(6em)}}body.official-page{margin:0;padding:0;height:100%;width:100%;font-family:Helvetica Neue,Helvetica,Arial,sans-serif}body.official-page a,body.official-page a:active,body.official-page a:visited{text-decoration:none}body.official-page *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}body.official-page h1,body.official-page h2,body.official-page h3{color:#444}body.official-page .mw-page{display:none;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:2em;font-family:PingFang SC,Helvetica Neue,Hragino Sans GB,Helvetica,Microsoft YaHei,Arial;text-align:center;position:fixed;z-index:1;top:0;bottom:0;left:0;right:0;background-color:#fff;-webkit-background-size:cover;background-size:cover;background-position:bottom;background-repeat:no-repeat}body.official-page .mw-page h4{font-size:.8em}body.official-page .mw-page.hide{display:none}body.official-page .mw-page.hidding{-webkit-animation-name:mw-kfr-fadeOut;-webkit-animation-duration:.3s;-webkit-animation-iteration-count:1;-webkit-animation-timing-function:ease-in-out;-webkit-animation-fill-mode:forwards;-moz-animation-name:mw-kfr-fadeOut;-moz-animation-duration:.3s;-moz-animation-iteration-count:1;-moz-animation-timing-function:ease-in-out;-moz-animation-fill-mode:forwards;-o-animation-name:mw-kfr-fadeOut;-o-animation-duration:.3s;-o-animation-iteration-count:1;-o-animation-timing-function:ease-in-out;-o-animation-fill-mode:forwards;-ms-animation-name:mw-kfr-fadeOut;-ms-animation-duration:.3s;-ms-animation-iteration-count:1;-ms-animation-timing-function:ease-in-out;-ms-animation-fill-mode:forwards;animation-name:mw-kfr-fadeOut;animation-duration:.3s;animation-iteration-count:1;animation-timing-function:ease-in-out;animation-fill-mode:forwards}body.official-page .mw-page.show{display:block;opacity:0;-webkit-animation-name:mw-kfr-fadeIn;-webkit-animation-duration:.3s;-webkit-animation-iteration-count:1;-webkit-animation-timing-function:ease-in-out;-webkit-animation-fill-mode:forwards;-moz-animation-name:mw-kfr-fadeIn;-moz-animation-duration:.3s;-moz-animation-iteration-count:1;-moz-animation-timing-function:ease-in-out;-moz-animation-fill-mode:forwards;-o-animation-name:mw-kfr-fadeIn;-o-animation-duration:.3s;-o-animation-iteration-count:1;-o-animation-timing-function:ease-in-out;-o-animation-fill-mode:forwards;-ms-animation-name:mw-kfr-fadeIn;-ms-animation-duration:.3s;-ms-animation-iteration-count:1;-ms-animation-timing-function:ease-in-out;-ms-animation-fill-mode:forwards;animation-name:mw-kfr-fadeIn;animation-duration:.3s;animation-iteration-count:1;animation-timing-function:ease-in-out;animation-fill-mode:forwards}body.official-page .mw-page.loading{background-image:url(https://a.mlinks.cc/scripts/dist/d7f0fc.png)}body.official-page .mw-page.loading h3{position:absolute;top:40%;left:0;width:100%;text-align:center}body.official-page .mw-page.loading.show .rain-progress>span{-webkit-animation-name:mw-kfr-loading;-moz-animation-name:mw-kfr-loading;animation-name:mw-kfr-loading;-webkit-animation-iteration-count:infinite;-moz-animation-iteration-count:infinite;animation-iteration-count:infinite}body.official-page .mw-page.loading .rain-progress{-webkit-transform:rotate(135deg) translate(-200px,200px);-moz-transform:rotate(135deg) translate(-200px,200px);-ms-transform:rotate(135deg) translate(-200px,200px);transform:rotate(135deg) translate(-200px,200px);opacity:.5}body.official-page .mw-page.loading .rain-progress>span{display:block;height:10px;-webkit-border-radius:50px;border-radius:50px;overflow:hidden;margin-bottom:5em}body.official-page .mw-page.loading .rain-progress>span:nth-child(1){-webkit-animation-duration:2s;-moz-animation-duration:2s;animation-duration:2s;background-color:#00c;width:50px}body.official-page .mw-page.loading .rain-progress>span:nth-child(2){-webkit-animation-duration:.8s;-moz-animation-duration:.8s;animation-duration:.8s;background-color:red;width:20px}body.official-page .mw-page.loading .rain-progress>span:nth-child(3){-webkit-animation-duration:1.6s;-moz-animation-duration:1.6s;animation-duration:1.6s;background-color:#9acd32;width:60px}body.official-page .mw-page.loading .rain-progress>span:nth-child(4){-webkit-animation-duration:.6s;-moz-animation-duration:.6s;animation-duration:.6s;background-color:orange;width:100px}body.official-page .mw-page.loading .rain-progress>span:nth-child(5){-webkit-animation-duration:1.2s;-moz-animation-duration:1.2s;animation-duration:1.2s;background-color:#ff4500;width:40px}body.official-page .mw-page.loading .rain-progress>span:nth-child(6){-webkit-animation-duration:2.4s;-moz-animation-duration:2.4s;animation-duration:2.4s;background-color:plum;width:120px}body.official-page .mw-page.loading .rain-progress>span:nth-child(7){-webkit-animation-duration:1.6s;-moz-animation-duration:1.6s;animation-duration:1.6s;background-color:#9acd32;width:60px}body.official-page .mw-page.loading .rain-progress>span:nth-child(8){-webkit-animation-duration:.6s;-moz-animation-duration:.6s;animation-duration:.6s;background-color:orange;width:100px}body.official-page .mw-page.loading .rain-progress>span:nth-child(9){-webkit-animation-duration:1.2s;-moz-animation-duration:1.2s;animation-duration:1.2s;background-color:#ff4500;width:40px}body.official-page .mw-page.loading .rain-progress>span:nth-child(10){-webkit-animation-duration:2.8s;-moz-animation-duration:2.8s;animation-duration:2.8s;background-color:plum;width:120px}body.official-page .mw-page.scheme-notsupported,body.official-page .mw-page.server-error{background-image:url(https://a.mlinks.cc/scripts/dist/c911f2.png)}body.official-page .mw-page.scheme-redirecting{background-image:url(https://a.mlinks.cc/scripts/dist/2af565.png)}body.official-page .mw-page.redirect-with-button{background-image:url(https://a.mlinks.cc/scripts/dist/d7f0fc.png)}body.official-page .mw-page.redirect-with-button.default .app-icon:after{display:block}body.official-page .mw-page.redirect-with-button .app-icon{overflow:visible;position:relative;margin-bottom:3em;background-color:transparent!important;width:7em;height:7em}body.official-page .mw-page.redirect-with-button .app-icon img{-webkit-border-radius:1em;border-radius:1em;overflow:hidden;position:relative;z-index:2;-webkit-box-shadow:0 5px 0 rgba(0,0,0,.1);box-shadow:0 5px 0 rgba(0,0,0,.1)}body.official-page .mw-page.redirect-with-button .app-icon:after{content:" ";display:none;position:absolute;left:-3em;top:-3em;right:-3em;bottom:-3em;background-image:url(https://a.mlinks.cc/scripts/dist/0d9f31.png);background-repeat:no-repeat;background-position:50%;-webkit-background-size:contain;background-size:contain}body.official-page .mw-page.setting-error{background-image:url(https://a.mlinks.cc/scripts/dist/072a5a.png)}body.official-page .mw-page.setting-error .mw-page-cont{position:absolute;bottom:4em;left:0;right:0}body.official-page .mw-page.custom-content{padding:0!important;z-index:10002}body.official-page .mw-page.custom-content .mw-page-cont{padding-top:80px;height:100%;overflow:auto}body.official-page .mw-page.custom-content .mw-page-cont h1{text-align:center;font-size:1.25em;line-height:1.1em;margin:0;font-weight:400;border-bottom:0 solid #eee;padding:1em .7em;color:#333}body.official-page .mw-page.custom-content .mw-page-cont .mw-cc-banner{background-repeat:no-repeat;background-position:50%;-webkit-background-size:cover;background-size:cover;max-height:50%;margin:0;padding:0;position:relative}body.official-page .mw-page.custom-content .mw-page-cont .mw-cc-banner img{width:100%;opacity:.001}body.official-page .mw-page.custom-content .mw-page-cont .mw-cc-banner a:after{content:"\53BB\770B\770B";display:block;position:absolute;z-index:2;right:24px;bottom:24px;background-color:rgba(113,149,251,.7);color:#fff;font-size:14px;font-weight:400;padding:5px 24px}body.official-page .mw-page.custom-content .mw-page-cont .content{margin:0;padding:32px 1em 1em;text-align:left;line-height:1.5em;color:#666}body.official-page .mw-page.custom-content .mw-page-footer{position:fixed;z-index:10002;height:80px;background-color:hsla(0,0%,100%,.9);top:0;bottom:auto;-webkit-box-shadow:0 0 0 transparent;box-shadow:0 0 0 transparent;text-align:left;padding:20px 24px}body.official-page .mw-page.custom-content .mw-page-footer>*{display:inline-block;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;vertical-align:middle}body.official-page .mw-page.custom-content .mw-page-footer .app-info{text-align:left;overflow:auto;padding:0;margin-top:0;width:60%;white-space:nowrap;word-break:keep-all}body.official-page .mw-page.custom-content .mw-page-footer .app-info,body.official-page .mw-page.custom-content .mw-page-footer .app-info *{vertical-align:middle}body.official-page .mw-page.custom-content .mw-page-footer .app-info .app-icon{display:inline-block;width:40px;height:40px;margin:0 .5em 0 0}body.official-page .mw-page.custom-content .mw-page-footer .app-info .app-name{display:inline-block;margin:0;white-space:nowrap;word-break:keep-all;overflow:hidden;-o-text-overflow:ellipsis;text-overflow:ellipsis}body.official-page .mw-page.custom-content .mw-page-footer .btns{float:right;text-align:right;padding:0}body.official-page .mw-page.custom-content .mw-page-footer .btns .mw-button{padding:6px 14px;font-size:14px;-webkit-border-radius:0;border-radius:0;margin:0!important}body.official-page .mw-page.universal-link-download{background-image:url(https://a.mlinks.cc/scripts/dist/d7f0fc.png)}body.official-page .mw-page.universal-link-download .mw-ul-slidedown{text-align:left;margin:1em 0 0 -.5em;padding:0 2em 0 0}body.official-page .mw-page.universal-link-download p{margin-top:2em;text-align:left;color:#888;font-size:1em}body.official-page .mw-page.universal-link-download ol{padding:0 0 0 1em;margin-top:.5em}body.official-page .mw-page.universal-link-download ol li{text-align:left;font-size:.8em;color:#aaa}body.official-page .mw-page.mw-alert{background-image:url(https://a.mlinks.cc/scripts/dist/d7f0fc.png)}body.official-page .mw-page.openinbrowser{background-image:none}body.official-page .mw-page.openinbrowser.default .logo{display:block}body.official-page .mw-page.openinbrowser.default .tips{bottom:3.2em;-webkit-background-size:contain;background-size:contain}body.official-page .mw-page.openinbrowser .tips{position:absolute;left:0;top:0;bottom:0;right:0;-webkit-background-size:cover;background-size:cover;background-repeat:no-repeat;background-position:top}body.official-page .mw-page.openinbrowser .logo{width:4em;height:4em;position:absolute;bottom:8em;left:50%;margin-left:-1em;-webkit-border-radius:8px;border-radius:8px;overflow:hidden;display:none}body.official-page .mw-page.openinbrowser.ios .tips{background-image:url(https://a.mlinks.cc/scripts/dist/4ad8ad.png)}body.official-page .mw-page.openinbrowser.android .tips{background-image:url(https://a.mlinks.cc/scripts/dist/7dfbbe.png)}body.official-page .mw-page .mw-page-footer{position:absolute;bottom:4em;left:0;right:0;text-align:center}body.official-page .mw-page .blue{color:#a5c5f6;text-shadow:0 1px 2px hsla(0,0%,100%,.2)}body.official-page .mw-page .mw-title,body.official-page .mw-page h3{color:#656565}body.official-page .mw-page p{line-height:1.4em;padding:0;margin:0}body.official-page .mw-page .tips{font-size:.8em;line-height:1.5em}body.official-page .mw-page .mw-page-cont.table{display:table;vertical-align:middle;height:100%;width:100%}body.official-page .mw-page .mw-page-cont.table .middle{display:table-cell!important;vertical-align:middle}body.official-page .mw-page .mw-ul-slidedown{position:fixed;top:0;width:100%;padding:1.5em 2em;font-size:1.1em;line-height:1.2em;color:#6bacec;z-index:1}body.official-page .mw-page .mw-ul-slidedown .text{padding-right:48px}body.official-page .mw-page .mw-ul-slidedown .icon-dropdown{position:absolute;top:1em;right:2em;left:auto;width:3em;height:3em;background-image:url(https://a.mlinks.cc/scripts/dist/35c091.png);background-repeat:no-repeat;-webkit-background-size:contain;background-size:contain;background-position:50%;-webkit-animation:mw-kfr-slidedown linear 2.5s infinite;-moz-animation:mw-kfr-slidedown linear 2.5s infinite;animation:mw-kfr-slidedown linear 2.5s infinite}body.official-page .mw-page .app-icon{margin:auto auto 1em;width:8em;height:8em;-webkit-border-radius:10px;border-radius:10px;overflow:hidden;background-image:url(https://a.mlinks.cc/scripts/dist/5cce69.png);-webkit-background-size:contain;background-size:contain;background-repeat:no-repeat}body.official-page .mw-page .app-icon img{width:100%;background-color:#fff}body.official-page footer{display:block!important;position:fixed;bottom:0;left:0;right:0;padding:24px;text-align:center;font-family:Helvetica Neue,Helvetica,Arial,sans-serif;font-size:12px;z-index:10001;color:#999}body.official-page footer a{color:#666!important}body.official-page #mw-navigator-modal{background-color:transparent!important}body .mw-button{display:inline-block;margin:2em 1em 1em;background-color:#7195fb;-webkit-border-radius:5px;border-radius:5px;padding:.6em 1.2em;font-size:1.1em;color:#fff;text-decoration:none;font-weight:400}body .mw-button.outline{border:2px solid #7195fb!important;background-color:transparent!important;color:#7195fb!important}body .mw-button.no-margin{margin:.5em}body .mw-button.min{padding:.4em .8em}body .mw-dialog{position:fixed;left:0;top:0;right:0;bottom:0;height:100%;width:100%;background-color:rgba(0,0,0,.6);-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;z-index:99999999999;display:-ms-flex;display:-webkit-flex;display:-webkit-box;display:-ms-flexbox;display:-moz-box;display:flex;-ms-flex-align:center;-webkit-align-items:center;-webkit-box-align:center;-moz-box-align:center;align-items:center;-webkit-justify-content:space-between;-ms-flex-pack:justify;-webkit-box-pack:justify;-moz-box-pack:justify;justify-content:space-between}body .mw-dialog>div{display:block;width:100%}body .mw-dialog .mw-close{width:80px;height:80px;-webkit-border-radius:50%;border-radius:50%;display:block;margin:2em auto 0;background:rgba(0,0,0,.4);padding:1.1em;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;border:2px solid #fff}body .mw-dialog .mw-close:after,body .mw-dialog .mw-close:before{display:block;content:" ";height:0;width:100%;border-bottom:2px solid hsla(0,0%,100%,.8);-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);position:relative;top:50%}body .mw-dialog .mw-close:after{-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg)}body .mw-dialog .mw-dialog-container{max-width:640px;overflow:auto;max-height:100%;width:80%;padding:2em 1em;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;font-size:14px;text-align:center;border:2px solid #fff;-webkit-border-radius:1em!important;border-radius:1em!important;background-color:#fff;color:#666;margin:auto;-webkit-box-shadow:2px 2px 3em rgba(0,0,0,.2);box-shadow:2px 2px 3em rgba(0,0,0,.2)}body .mw-dialog .mw-dialog-container .mw-app-icon{width:6em;height:6em}body .mw-dialog .mw-dialog-container .mw-app-name{font-size:1em;margin-bottom:2em;color:#000}body .mw-dialog .mw-dialog-container .mw-button{font-size:1.5em;padding:1em 2em}@media screen and (max-width:320px){body.official-page{font-size:12px}body.official-page.ulink-page header{padding:.7em 1.2em;font-size:.8em}body .mw-dialog .mw-dialog-container{font-size:1em}}.mw-qrcode{position:fixed;z-index:10000;width:100%;height:100%;top:0;left:0;background-color:rgba(0,0,0,.8);-webkit-background-size:90% auto;background-size:90% auto;background-repeat:no-repeat;background-position:100% 0;overflow:auto;text-align:center}.mw-qrcode h1{font-size:18px;text-align:center;margin:100px auto 24px;color:#666}.mw-qrcode img{max-width:160px;border:1px solid #eee;-webkit-border-radius:5px;border-radius:5px;padding:10px}
+</style><script type="text/javascript" charset="utf-8" async="" src="https://staticcdn.igetget.com/mobile/dedao/dist/js/project/20.c98fb7fc11f6a8f63c17.js">
+</script></head>
+<body style="font-size: 12px;">
+
+<div class="source-unknown">
+<script src="https://s.mlinks.cc/scripts/dist/mlink.min.js"></script>
+<footer class="footer ">
+    <div class="download_logo"><img src="https://staticcdn.igetget.com/mobile/dedao/dist/images/get_80.png" alt=""><p>好好学习 天天想上</p></div>
+    <div class="download"><a id="btnOpenApp" href="javascript:void(0)" mlink-handling="true">打开得到App</a></div>
+</footer>
+<script>
+    var isIOS = navigator.userAgent.match(/iPhone|iPad|iPod/i) ? true : false,
+        titlePrefix = "得到 | ",
+        mlinkConfig = {
+            live : {
+                url : "http://a.mlinks.cc/AAN1",
+                param : "room_id"
+            },
+            column : {
+                url : "http://a.mlinks.cc/AAE8",
+                param : "column_id"
+            },
+            subject : {
+                url : "http://a.mlinks.cc/AANC",
+                param : "sid"
+            },
+            audio : {
+                url : "http://a.mlinks.cc/AAFb",
+                param : ""
+            },
+            book : {
+                url : "http://a.mlinks.cc/AANh",
+                param : "bookId"
+            },
+            topic : {
+                url : "http://a.mlinks.cc/AANZ",
+                param : "audioId"
+            },
+            storytelling : {
+                url : "http://a.mlinks.cc/AAxB",
+                param : "saydetail_id"
+            },
+            magazine: {
+                url: "http://a.mlinks.cc/Aa0T",
+                param: "magazine"
+            }
+        };
+
+        if(isIOS){
+
+            new Mlink({
+                mlink : "http://a.mlinks.cc/AAB7?page=&key=&val=", //在魔窗后台配置好的短链URL
+                button : document.querySelector("a#btnOpenApp"), //必须是A标签
+                autoRedirect : false//尝试自动打开在魔窗后台配置的mlink中的App
+            });
+
+        }else{
+
+            var product = mlinkConfig[""] || mlinkConfig["column"];
+
+            new Mlink({
+                mlink : product.url+"?"+product.param+"=", //在魔窗后台配置好的短链URL
+                button : document.querySelector("a#btnOpenApp"), //必须是A标签
+                autoRedirect : false//尝试自动打开在魔窗后台配置的mlink中的App
+            });
+
+        }
+</script>
+
+</div>
+
+<div class="subscribe-detail source-unknown" data-source="unknown">
+    <div class="top" data-img="https://piccdn.igetget.com/img/201702/23/201702231554015401784799.jpg" data-id="11" data-sharetitle="得到订阅专栏：薛兆丰的北大经济学课" data-sharecontent="不是每个人都能上北大，但每个人都有机会学到北大最精英的课程。">
+    </div>
+
+    
+
+
+
+<article class="article default">
+
+    <h1 class="title name-11">第7周问答 | 中国式过马路到底好不好？</h1>
+
+    <div class="author">
+        
+        <img src="https://piccdn.igetget.com/img/201702/23/201702231554015401784799.jpg">
+        
+        <p>薛兆丰</p>
+        <span class="time">2017-04-07</span>
+    </div>
+    <div class="line"></div>
+    <div style="display:none;">
+        
+        {}
+    </div>
+
+
+    <div class="article-body">
+        
+            
+
+
+                <div class="article-audio article-audio-2">
+                    <div class="audio">
+                        <div class="audio-detail">
+                            <button class="article-audio-btn play" data-title="第7周问答丨中国式过马路到底好不好？" data-src="http://igetoss.cdn.igetget.com/mp3/201704/06/201704062232308302494006.mp3"></button>
+                            <div class="info article-audio-meta">
+                                <p class="audio-title">第7周问答丨中国式过马路到底好不好？</p>
+                                <p class="audio-desc">
+                                    <span class="time music-time">15:49</span>
+                                    <span class="size article-audio-size">7.41 MB</span>
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="audio-tips">
+                            <div class="text">丨薛兆丰亲述丨</div>
+                        </div>
+                    </div>
+                </div>
+
+            
+        
+            
+                <div class="text ">
+                    <p>你好，我们开始本周的问答时间。</p><p>关于成本概念的讨论，我们暂时告一个段落。不知道你有没有这样的感受，时间过得真快，一晃就一个月了。当时我跟你说“用一句话给成本下定义”的时候，那是一个月前，好像还是昨天的事情。</p><p>成本的概念容易吗，还是很难？有时候觉得容易，有时候觉得难——我自己的感受也是这样。</p><p>我不是常说嘛，不是科斯聪明是咱们糊涂，其实科斯教我们的事情很简单。但是，有时候我们又会想，成本的概念，应用非常的广泛，这个概念高深莫测。其实这就是学习的过程。</p><p>书有时候读厚，有时候读薄，往返要好多次，真理往往只有在它被清楚地陈述之后，才是显而易见的，才是昭然若揭的。我们需要反复的思考，才能形成自己通过经济学的角度来理解世界的习惯。</p>
+                </div>
+                <!-- 需要处理空白p标签 -->
+            
+        
+            
+                <h2>中国式过马路符合科斯定律</h2>
+            
+        
+            
+                <div class="text ">
+                    <p>我们来谈谈这个礼拜留的几道作业题。周一的问题是：“你能不能再举一个例子，你认为它是合理的社会习俗，因为它能够把资源界定给合适的人。”</p><p>同学们举了不少很贴切的例子。我觉得最有意思的，是王帅同学讲的“中国式过马路”的例子。我们都知道很多人批评中国人过马路的方式，说中国人不守规矩。</p><p>但王帅同学提出不同的看法。他说，中国式过马路，其实挺符合科斯定律的，完完全全遵照交通灯来过马路，其实有很大的损失，因为有时候车多，有时候人多，交通灯的时间是固定的，这当中就有很大的时间浪费。</p><p>中国式过马路的核心就是数人头，计算利益的总和。当人聚得差不多了，声势浩大，浩浩荡荡地过马路的时候，这时候就是人群应该获得路权的时候，他这个观点很有意思。</p>
+                </div>
+                <!-- 需要处理空白p标签 -->
+            
+        
+            
+                <figure>
+                    <img src="https://piccdn.igetget.com/img/201704/06/201704062152281850851894.jpg">
+                    
+                </figure>
+
+            
+        
+            
+                <h2>经济学如何改变观念</h2>
+            
+        
+            
+                <div class="text ">
+                    <p>另外有两位同学，一位是杨国强同学，一位是叫Rothbard的同学，他们说，他们以前是自由主义者，最讨厌陈规旧俗，最喜欢自由，学了经济学以后才明白，咱们在日常生活中大致应该随大流，因为随大流遵守社会的习俗能够节省交易费用。</p><p>你要知道这位Rothbard同学挺有意思的，他名字叫Rothbard，译成中文叫罗斯巴德。罗斯巴德是美国一位著名的自由放任经济学者，甚至是位无政府主义者。你看，咱们的课不仅仅能够改变计划经济者的思维，还能改变那些无政府主义者的思维，看来咱们的课确实有点作用。</p><p>我自己年轻的时候，也特别不喜欢循规蹈矩，比方说我就不喜欢结婚，我觉得结婚没意思，就一张纸，相信爱情就不需要用那张纸来证明什么东西。现在慢慢长大了，学的经济学也多了，才开始明白婚姻其实是有很重要的作用的。</p>
+                </div>
+                <!-- 需要处理空白p标签 -->
+            
+        
+            
+                <h2>墓地争端：新人新办法，老人老办法</h2>
+            
+        
+            
+                <div class="text ">
+                    <p>周二的问题：“我们在国外一些城市里面，看到有一些非常好的路段，那里有私人的墓地，我们到底是应该尊重产权，保持原貌，还是把它征用过来推动商业的发展，哪种更合理？”</p><p>很多同学根据课程的内容都答对了，没有一刀切的答案，得平衡、得看具体的情况。在美国，在不同的地区，在不同的州，在不同的时期就有不同的做法。</p><p>我印象比较深的是2010年在芝加哥发生的故事。当时我刚好住在芝加哥，芝加哥的国际机场O'Hare机场要扩建跑道，这时候就必须拆迁O'Hare机场旁边的一个古老的墓地。这个古老的墓地是在1849年建的，而O'Hare机场是在1942年才开始建的。也就是说，在机场开始建以前93年，人家的墓地就已经在那儿了。</p><p>当2001年市长宣布要拆迁这个墓地的时候，马上就遭到了教会的激烈反对。神父说你们应该尊重在这里安葬的死者，他们在被安葬的时候，是确信自己将会永远安息在这块地方，一直等到复活的那一天的。</p><p>说什么他们也不妥协，说什么也不让政府拆迁这块墓地。市长宣布要拆迁是2001年，他们就开始抗争。</p><p>但是市长有市长的办法，芝加哥原来有一大堆的法律是保证墓地不被政府征用的，但是到2003年芝加哥就通过了一项新的法律，说明政府有权征用任何的土地，包括私人的墓地。有了这个法令以后，教堂要保住他们的墓地就难了。</p><p>最后到2010年，法庭判决政府有权征用这块土地，安葬在墓地的死者的家属，总共获得了130多万美元的赔偿。</p><p>不多吧？但是为了张罗这件事，为了请律师，为了请家谱专家把那些安葬在这个墓地里面的死者亲属找出来——有些人根本不知道自己的亲属是葬在那个墓地的，是人家找到他，他才知道的——所有这些张罗的费用，总共花了1700多万美元。</p><p>而更有意思的是，整个O'Hare机场的扩建工程总额是150亿美元。你看，直接的赔偿只是130万，但整个张罗墓地拆迁的费用是1700万，而这只不过是整个机场扩建工程的一个零头。</p><p>这一头是一块160年的墓地，那一头是一个150亿的在建工程，哪个重哪个轻？科斯定律起不起作用，这挺值得回味的。</p><p>其实在美国不同的州，他们保护墓地的法律是不一样的。据我所知德克萨斯州的保护是相当强的，他们的法律就规定政府不能征用墓地，就这么简单。但是随着城市的发展，它最后还是扛不住，到1993年的时候他们出了新的规定。</p><p>他们规定，新人新办法，老人老办法。老的墓地，哪怕是在城市中间，那政府也不能动它；但是1993年以后，墓地本身就不能修在城市的当中，必须修在城市以外，到底离城市多远则取决于城市的大小。</p><p>其实法律不是死的，保护私有产权、保护私人的意愿，也不是完全绝对的。在英美的习惯法里面，就还有一条原则叫“反对永久原则”—— The rule against dead hand 或者The rule against perpetuities。它的意思是说，有些人在遗嘱里面有一些嘱托，这些嘱托等他们死去以后当然是有效的，但是不可能永久有效。</p><p>当这些人的嘱托里面所涉及到的所有人，都已经死去21年，他的嘱托就失效了。比方说，有人在遗嘱里面说，他的这块地给后代继承有一个条件，就是在上面不准盖工厂，那这样的嘱托就不可能永远地执行下去。到了一定时间，事过境迁，规则就要发生改变。</p>
+                </div>
+                <!-- 需要处理空白p标签 -->
+            
+        
+            
+                <figure>
+                    <img src="https://piccdn.igetget.com/img/201704/06/201704062145241141041677.jpg">
+                    
+                </figure>
+
+            
+        
+            
+                <h2>彩礼的制度功能</h2>
+            
+        
+            
+                <div class="text ">
+                    <p>周三的问题，男女结婚成家的时候，互相都是需要对方的，但需要的程度不一样，你能不能给出证据？</p><p>有证据，证据就是有一方要向另外一方给彩礼。当然有时候也还有嫁妆，嫁妆和彩礼互相抵消，有一个净值。也就是说，我们在婚姻当中经常能够看到，一方向另外一方做支付。支付的方式可以是现金，可以是财物，甚至可以是劳动服务。</p><p>这个原理跟果农和养蜂人互相支付的原理是一样的。传统上，女孩嫁到男孩家里面去，女孩家好不容易把女孩养大了，一下子把女孩嫁出去，家里至少少了一个劳动力，这时候需要得到一定的补偿。这就是为什么彩礼如此普遍的原因。</p><p>当然彩礼包含的不仅仅是钱，也可以是一些食物。有一些比较贫困的地区，他们还有娃娃亲。娃娃亲就是说，男孩从小就可以到女孩家里提供劳动服务，这是一种彩礼的分期付款方式。到时候真的结婚成家，可能就不需要付彩礼了，或者彩礼就不需要那么多了。</p><p>这是对彩礼现象的一个初步的经济解释，但这样的解释还不够，还不完整。女孩家当然在意彩礼的多少，但是他们也不会只看彩礼的多少，毕竟女孩家不是在卖女儿，他们也关心女儿的幸福，所以他们不仅收彩礼，还会赔上嫁妆。</p><p>彩礼的作用不仅仅是钱，我们说过，好的经济学者眼里不只是钱，北大法学院朱苏力老师就有一篇非常精彩的论文，叫“ 坚硬的软法——彩礼的制度功能 ”。</p><p>在这篇文章里面，他分析的是，彩礼除了支付的功能以外，还另外具有克服信息不对称问题的功能。</p><p>比方说，如果男方给女方的彩礼，是他们家打猎打到的动物的毛皮，这就能说明他们家的生产能力，如果彩礼是他们家借钱借回来呢，那也能说明他们筹措资金的能力。</p><p>有时候越是贫困的地区，越重彩礼，那是因为彩礼所代表的不仅仅是钱，他也代表着男方对这桩婚姻的重视程度，彩礼是一种很重要的表决心的方法，至于为什么总是男方向女方表决心呢？这里面也隐藏着信息不对称的问题，如果你有兴趣，我们后面还会专门讨论信息不对称的问题。&nbsp; &nbsp;&nbsp;
+</p>
+                </div>
+                <!-- 需要处理空白p标签 -->
+            
+        
+            
+                <figure>
+                    <img src="https://piccdn.igetget.com/img/201704/06/201704062148377648015145.jpg">
+                    
+                </figure>
+
+            
+        
+            
+                <h2>机场扰民不一定要赔钱</h2>
+            
+        
+            
+                <div class="text ">
+                    <p>最后一个大问题：机场旁边的民宅成天受到飞机轰鸣声的骚扰，居民是否应该要求机场作出赔偿。</p><p>在开始讲社会成本的时候，我们讲过123的概念，我们怎么理解社会成本呢？</p><p>最好的办法，是先把所有的纠纷、所有的冲突，看成是一个主人，然后变成两个主人。一个主人的时候他会怎么处理，也就是说交易费用为零的时候会怎么处理，这是一个参照系。</p><p>然后我们引入交易费用，我们说有两个人的情况下，存在交易费用的时候，情况会怎么样？</p><p>还有一种情况，是三个人，我们把整个社会都引进来，情况就会更复杂。当然这也更贴近我们的现实。机场的例子就是这样。</p><p>我先跟你讲一个故事。好多年前我住芝加哥，芝加哥有一个非常漂亮的植物园——Botanic Garden。这个植物园去参观的时候是免费的，不用门票，免费进去就可以。</p><p>但是它有另外一个规定，是如果你开车去的话，停车费是要收钱的，不管里面坐多少人，一辆车17块美元。这个植物园离市中心挺远的，绝大多数人都得开车去，所以实际上是要付钱的，17块钱一个车位。</p><p>但我注意到在这个植物园旁边，有一些居民区，有人住在那。如果你住在这个植物园旁边，不是就不用开车进植物园了吗？这植物园不就免费了吗？我问你，住在植物园旁边的居民，他们赚了吗？你可能会想：当然赚了，他不是免费能够进去看植物园吗？不用交停车费吗？经济学的答案是说他们没赚。</p><p>为什么没赚？你看这些居民，当年他们买这些在植物园旁边的住宅的时候，或者租这些房子的时候，原来的房东会跟他们说，你看我们这房子可不是普通的房子——我们这是一间普通的房子，跟别的房子一样的房子，再搭上一个免费的植物园。</p><p>加多少钱，大致上加17块钱一天，所以他们没赚。谁赚了？除非是那些，当初早就住在那里，后来植物园才修起来，植物园忽然宣布他们是免费进入的，在那一刻，原来已经在的户主他们赚了，除此以外，后面再来的人都没赚。</p><p>用这个原理，我们来看飞机场旁边的居民，到底有没有受到损害。只有那些当政府宣布要在那个地方修机场的时候，就已经住在那里的居民，在那一刻他们受损了。</p><p>但是，从那一刻开始再搬进来的人，不管是新买房的还是租客，他们都没有受损。为什么，因为那个地方有噪音，谁都知道了，那个地方的价值，那个地区房屋的价值已经下降了，已经贬值了。所以从这以后再来买房再来租房的人，其实已经买到了便宜货了，已经得到了补贴了，所以他们不应该得到补偿。</p><p>再举个简单的例子，我租了套房，住进去以后，这栋楼旁边才开始有人盖房，工地发出了很多的噪音，有一天我在电梯里面忽然看到一个告示，说这个工地要给大家支付噪音赔偿费，我问这个噪音赔偿费，是应该我这个租户得到呢，还是房东得到？</p><p>答案是应该我得到。因为我租房的时候，我付的那个价是没有噪音的费用的，然后这个工地一开工以后，我忽然间受到了损失，这个钱应该我得。</p><p>如果倒过来这工地老早就已经开工了，我这时候才住进去，然后这个工地答应支付噪音赔偿费，这个赔偿费应该我得，还是房东得？</p><p>应该房东得。因为我支付的房租其实已经是便宜了的，是房东在这个工地开工的时候受到了意外的损失。</p>
+                </div>
+                <!-- 需要处理空白p标签 -->
+            
+        
+            
+                <h2 class="titleCenter">
+                    <div>
+                        <span>今日思考</span>
+                    </div>
+                </h2>
+            
+        
+            
+                <div class="text ">
+                    <p>根据这个原理，我给你出一道难题：北京在奥运期间，忽然宣布所有的地铁票价都降为两块钱，这个优惠政策出台以后谁是受益者？后来北京政府又决定把票价调回去了，谁是受害者？&nbsp; &nbsp;&nbsp;
+</p>
+                </div>
+                <!-- 需要处理空白p标签 -->
+            
+        
+            
+                <h2 class="titleCenter">
+                    <div>
+                        <span>欢迎留言</span>
+                    </div>
+                </h2>
+            
+        
+            
+                <div class="text ">
+                    <p>最后我还要提醒你，我为你准备了黑板报，黑板报上贴了这个礼拜我认为最精彩的留言。欢迎你踊跃留言，希望下周能够在黑板报上看到你的分享。好了，这一周的问答时间就到这里了。</p><p>明天是预习的时间，祝你周末愉快。&nbsp; &nbsp;&nbsp;
+</p>
+                </div>
+                <!-- 需要处理空白p标签 -->
+            
+        
+            
+
+                <div class="split"></div>
+
+            
+        
+            
+                <div class="tag">
+                    
+                    <span>黑板报</span>
+                    
+                </div>
+            
+        
+            
+                <figure>
+                    <img src="https://piccdn.igetget.com/img/201704/07/201704070051050178974899.jpg">
+                    
+                </figure>
+
+            
+        
+            
+                <figure>
+                    <img src="https://piccdn.igetget.com/img/201704/07/201704070051355853379555.jpg">
+                    
+                </figure>
+
+            
+        
+            
+                <figure>
+                    <img src="https://piccdn.igetget.com/img/201704/07/201704070051445287839643.jpg">
+                    
+                </figure>
+
+            
+        
+            
+                <figure>
+                    <img src="https://piccdn.igetget.com/img/201704/07/201704070051574704371161.jpg">
+                    
+                </figure>
+
+            
+        
+            
+                <figure>
+                    <img src="https://piccdn.igetget.com/img/201704/07/201704070052070749699231.jpg">
+                    
+                </figure>
+
+            
+        
+            
+                <figure>
+                    <img src="https://piccdn.igetget.com/img/201704/06/201704062012081140824999.jpg">
+                    
+                </figure>
+
+            
+        
+            
+                <figure>
+                    <img src="https://piccdn.igetget.com/img/201704/06/201704062012157821573474.jpg">
+                    
+                </figure>
+
+            
+        
+    </div>
+
+</article>
+
+
+
+
+    <div class="comments" data-c="25" data-a="3750">
+        <div class="comments-head">
+            <span>精选留言</span>
+        </div>
+        <ul class="comments-list">
+                
+                
+                <li class="comments-footer">加载中</li>
+                
+        </ul>
+    </div>
+    <div id="audioContainer"></div>
+</div>
+
+<script>
+window.audioCover = 'https://piccdn.igetget.com/img/201702/23/201702231554129462184922.jpg';
+</script>
+
+<script type="text/javascript" src="https://staticcdn.igetget.com/mobile/dedao/dist/js/project/common.6ff438ef1898763dcf2a.js"></script>
+<script type="text/javascript" src="https://staticcdn.igetget.com/mobile/dedao/dist/js/project/try/article/main.4cecc3f854185e9a2b72.js"></script> 
+
+
+
+
+
+<script src="//hm.baidu.com/hm.js?31ee5037df015e9b59b755d1c7fd6428"></script></body></html>
